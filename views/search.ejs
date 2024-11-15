@@ -1,0 +1,30 @@
+<%- include("partials/header1.ejs", {username})%>
+<main>
+    <body>
+        <div id="search-results-div">
+            <p><strong>Search Results for "<%= query %>"</strong></p>
+            <% if (userData.length === 0) { %>
+                <p>No results found.</p>
+            <% } else { %>
+            <ul class="search-results">
+                <% userData.forEach((result) => { %>
+                    <li>
+                        <a href="searchprofile?user=<%= result.user %>">
+                            <span><%= result.user %></span>
+                            <img class="search-img" src="<%= result.dp %>" alt="<%= result.user %>"><br>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul><br>
+            <% } %>
+        </div>     
+        <button id="back-btn">Back</button>    
+    </body>
+    <script>
+        const backBtn = document.getElementById('back-btn');
+        backBtn.addEventListener('click', () => {
+            window.history.back();
+        })
+    </script>
+</main>
+

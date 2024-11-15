@@ -1,0 +1,60 @@
+<% const username = userData ? userData.user : user; %>
+<%- include("partials/header.ejs", {username}) %>
+<main>
+  <body>
+    <div id="form-container">
+      <form id="profile-form">
+        <label for="username">UserName:</label><br>
+        <input id="username" value="<%= userData ? userData.user: user %>"  name="user" disabled><br><br>
+        <label for="ph-no">Phone Number :</label><br>
+        <input type="tel" id="ph-no" name="phno" value="<%= userData ? userData.phno : '' %>"><br><br>
+        <label for="email">Email Id :</label><br>
+        <input type="email" id="email" name="email" value="<%= userData ? userData.email : '' %>"><br><br>
+        <label for="role">Role :</label><br>
+        <select name="role" id="role" required>
+            <% if (userData === "") { %>
+                <option value="" disabled selected hidden>Select an Option</option>
+                <option value="batsman">Batsman</option>
+                <option value="bowler">Bowler</option>
+                <option value="allrounder">Allrounder</option>
+              <% } else { %>
+                <option value="Batsman" <%= userData.role === "Batsman" ? 'selected' : '' %>>Batsman</option>
+                <option value="Bowler" <%= userData.role === "Bowler" ? 'selected' : '' %>>Bowler</option>
+                <option value="Allrounder" <%= userData.role === "Allrounder" ? 'selected' : '' %>>Allrounder</option>
+              <% } %>                
+        </select><br><br>
+        <label for="bat">Batting Style:</label><br>
+        <select name="bat" id="bat" required>
+            <% if (userData === "") { %>
+                <option value="" disabled selected hidden>Select an Option</option>
+                <option value="Left-Handed">Left-Handed</option>
+                <option value="Right-Handed">Right-Handed</option>
+              <% } else { %>
+                <option value="Left-Handed" <%= userData.bat === "Left-Handed" ? 'selected' : '' %>>Left-Handed</option>
+                <option value="Right-Handed" <%= userData.bat === "Right-Handed" ? 'selected' : '' %>>Right-Handed</option>
+              <% } %>        
+        </select><br><br>
+        <label for="bowl">Bowling Style:</label><br>
+        <select name="bowl" id="bowl" required>
+            <% if (userData === "") { %>
+                <option value="" disabled selected hidden>Select an Option</option>
+                <option value="Left-Arm Fast">Left-Arm Fast</option>
+                <option value="Right-Arm Fast">Right-Arm Fast</option>
+                <option value="Left-Arm Spin">Left-Arm Spin</option>
+                <option value="Right-Arm Spin">Right-Arm Spin</option>
+              <% } else { %>
+                <option value="Left-Arm Fast" <%= userData.bowl === "Left-Arm Fast" ? 'selected' : '' %>>Left-Arm Fast</option>
+                <option value="Right-Arm Fast" <%= userData.bowl === "Right-Arm Fast" ? 'selected' : '' %>>Right-Arm Fast</option>
+                <option value="Left-Arm Spin" <%= userData.bowl === "Left-Arm Spin" ? 'selected' : '' %>>Left-Arm Spin</option>
+                <option value="Right-Arm Spin" <%= userData.bowl === "Right-Arm Spin" ? 'selected' : '' %>>Right-Arm Spin</option>
+              <% } %>               
+        </select><br><br>
+        <label for="achievement">Acheivements :</label><br>
+        <textarea id="achievement" name="achievement"><%= userData ? userData.achievement : "Best Score: 130" %></textarea><br>
+        <button id="save-btn">Save</button>
+        <button id="back-btn" type="button">Back</button>
+    </form>
+    </div>
+    <script src="editprofile.js"></script>
+  </body>
+</main>

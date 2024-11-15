@@ -1,0 +1,25 @@
+<% const username = user; %>
+<%- include("partials/header.ejs", { username}) %>
+<main>
+    <body>
+        <h1><%= tournamentData.tourname %></h1>
+        <p>
+            Venue : <%= tournamentData.venue %><br>
+            Date : <%= tournamentData.date %><br>
+            Host : <%= tournamentData.host %><br>
+            Entry Fees : <%= tournamentData.entry %><br>
+            Winning Price : <%= tournamentData.winner %><br>
+            Runner up Price : <%= tournamentData.runner %><br>
+            Boundary : <%= tournamentData.boundary %> <br>
+            Ball : <%= tournamentData.ball %><br>
+            Rules & Regulations : <%= tournamentData.rules %><br>
+            Contact Details : <%= tournamentData.contact %><br>
+        </p><br>
+        <button id="back-btn" type="button">Back</button>
+        <script>
+            const backBtn = document.getElementById('back-btn');
+            backBtn.addEventListener('click', () => window.history.back());
+        </script>
+    </body>    
+</main>
+

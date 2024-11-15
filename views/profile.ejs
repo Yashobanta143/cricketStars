@@ -1,0 +1,37 @@
+<% const username = userData ? userData.user : id; %>
+<%- include("partials/header.ejs", {username}) %>
+<main>
+    <body>
+        <div class="fixed">
+            <img id="profile-picture-preview" src="<%= userData.userDp ? userData.userDp : defaultImage %>" alt="Profile Picture">
+            <button class="hidden" id="savedp">Save</button>
+            <button class="hidden" id="discard">Discard</button>
+            <label for="dp" class="img-label" id="img-label">Change DP</label>
+            <input type="file" id="dp" name="dp" accept="image/*" style="display: none">
+            <a href="editprofile?user=<%= username %>" class="button-link">Edit Profile</a>
+            <button id="back-btn" type="button">Back</button>
+        </div>
+        <div id="main-page">
+            <!-- Overlay container for zoomed image -->
+            <div class="zoom-overlay" id="zoom-overlay">
+                <img src="<%= userData ? userData.userDp : 'default-image.png' %>" alt="Zoomed Profile Picture" class="zoomed-picture">
+            </div>
+            <p><strong>Profile Details</strong></p>
+            <p><strong>Username</strong></p>
+            <p id="user"><%= username %></p>
+            <p><strong>Phone Number</strong></p>
+            <p><%= userData ? userData.phno : '' %></p>
+            <p><strong>Email</strong></p>
+            <p><%= userData ? userData.email : '' %></p>
+            <p><strong>Role</strong></p>
+            <p><%= userData ? userData.role : '' %></p>
+            <p><strong>Batting Style</strong></p>
+            <p><%= userData ? userData.bat : ''  %></p>
+            <p><strong>Bowling Style</strong></p>
+            <p><%= userData ? userData.bowl : '' %></p>
+            <p><strong>Acheivements</strong></p>
+            <p><%= userData ? userData.achievement : '' %></p>
+        </div> 
+        <script src="profile.js"></script>
+    </body>
+</main>

@@ -1,0 +1,20 @@
+<%- include("partials/header1.ejs") %>
+<main>
+  <body>
+    <form action="/main" method="POST" class="login">
+      <label for="mobNo">Mobile Number</label><br/>
+      <input type="tel" name="mobNo" required><br/><br>
+      <label for="password">Password</label><br/>
+      <input type="text" name="password" required><br/><br>
+      <button id="back-btn" type="button">Go Back</button>
+      <input type="submit" value="Login">
+    </form><br>
+    
+    <script>
+        const backBtn = document.getElementById('back-btn');
+        backBtn.addEventListener('click', () => {
+            window.history.back();
+        })
+    </script>
+  </body>
+</main>

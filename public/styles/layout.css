@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+i {
+  margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+.navbar-logo {
+  padding: 15px;
+  color: #fff;
+}
+.navbar-mainbg {
+  background-color: #3AAFA9;
+  padding: 0px;
+  height: 120%;
+}
+
+.navbar-expand-custom .navbar-toggler {
+  position: absolute;
+  right: 0;
+
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: 81px;
+    right: -200px; /* width of sidebar */
+    height: 100vh;
+    background-color: #000000;
+    border-radius: 5px 0 0 0;
+    color: #fff;
+    padding: 20px;
+    transition: left 0.5s ease;
+  }
+
+  .sidebar-link {
+    color: #fff;
+  }
+
+  .sidebar.active {
+    right: 0;
+  }
+
+  header a:hover{
+    color: #e93434;
+    text-decoration: none;
+  }
+
+  #hidebar {
+    background: transparent;
+    border: none;
+
+  }
+
+  .no-bullets {
+    list-style-type: none;
+  }
+  
+}
+
+@media (max-width: 991px) {
+  
+  .sidebar {
+    position: fixed;
+    top: 81px;
+    right: -200px; /* width of sidebar */
+    height: 100vh;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    transition: right 0.5s ease;
+  }
+
+  .sidebar-link {
+    color: #fff;
+  }
+  
+  header a:hover{
+    color: #e93434;
+    text-decoration: none;
+  }
+
+  .sidebar.active {
+    right: 0;
+  }
+  
+  #hidebar {
+    background: transparent;
+    border: none;
+
+  }
+
+  .no-bullets {
+    list-style-type: none;
+  }
+  
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  background: #3AAFA9;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+footer .social_icon,
+footer .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+footer .social_icon li,
+footer .menu li {
+  list-style: none;
+}
+footer .social_icon li a {
+  font-size: 2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social_icon li a:hover {
+  transform: translateY(-15px);
+  color: blue;
+}
+
+footer .menu li a {
+  font-size: 1.2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+}
+footer .menu li a:hover {
+  opacity: 1;
+  color: #fff;
+}
+p {
+  color: whtie;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.copyright {
+  color: white;
+}
+
+.navbar-menu.active {
+  display: flex;
+}
+
+
+/* Searchbar CSS start*/
+#search-input {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+}
+
+
+#search-button {
+  position: absolute;
+  background-color: #ffffff;
+  left: 62.5%;
+  height: 57%;
+  width: 30px;
+  border: none;
+  border-radius: 100px;
+}
+
+
+
+#search-results tr {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#search-results img:hover {
+  background-color: #3AAFA9;
+}
+
+#search-results tr:hover {
+  background-color: #3AAFA9;
+}
+
+
+/* Searchbar CSS end*/
+
+main .hidden{
+  display: none;
+}

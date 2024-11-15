@@ -1,0 +1,60 @@
+<% const username = userData ? userData.user : user; %>
+<%- include("partials/header.ejs", { username}) %>
+<main>
+    <body>
+        <div class="fixed">
+            <img id="profile-picture-preview" src="<%= userData.userDp ? userData.userDp : defaultImage %>" alt="Profile Picture">
+            <p id="main-user"><strong><%= username %></strong></p><br>
+            <button id="my-profile" type="button">My Profile</button><br><br>
+            <button id="add-tournament" type="button">Add a Tournament</button><br><br>
+            <button id="logout-btn" type="button">Logout</button>
+        </div>
+        <div id="main-page">
+            <div id="upcoming-tournaments">
+                <p tour-head><strong>🏏Upcoming Tournaments🏏</strong></p>
+            </div>
+            <div id="form-container" style="display: none;">
+                <form id="tournament-form">
+                    <input type="hidden" name="user" id="user" value="<%= username %>">
+                    <label for="tourname">Tournament Name :</label><br>
+                    <input type="text" name="tourname" id="tourname"><br>
+                    <label for="venue">Venue :</label><br>
+                    <input type="text" name="venue" id="venue"><br>
+                    <label for="date">Date :</label><br>
+                    <input type="date" name="date" id="date"><br>
+                    <label for="host">Host Name :</label><br>
+                    <input type="text" name="host" id="host"><br>
+                    <label for="contact">Contact Number :</label><br>
+                    <input type="text" name="contact" id="contact"><br>
+                    <label for="entry">Entry Fees :</label><br>
+                    <input type="text" name="entry" id="entry"><br>
+                    <label for="win">Winning Price :</label><br>
+                    <input type="text" name="winner" id="win"><br>
+                    <label for="runner">Runners up Price :</label><br>
+                    <input type="text" name="runner" id="runner"><br>
+                    <fieldset>
+                        <legend>Boundary Type : </legend>
+                        <input type="radio" name="boundary" value="short" id="short">
+                        <label for="short">Short</label>
+                        <input type="radio" name="boundary" value="long" id="long">
+                        <label for="long">Long</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Ball Type : </legend>
+                        <input type="radio" name="ball" value="tennis" id="tennis">
+                        <label for="tennis">Tennis</label>
+                        <input type="radio" name="ball" value="cork" id="cork">
+                        <label for="cork">Cork</label><br>
+                    </fieldset>
+                    <label for="rules">Rules and Regulations :</label><br>
+                    <textarea name="rules" id="rules">1. Umpire decision is final decision.</textarea><br>
+                    <button id="add-btn" type="submit">Add</button>
+                    <button id="back-btn" type="button">Back</button>
+                </form>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</main>
+
+<!-- <%- include("partials/footer.ejs") %> -->
